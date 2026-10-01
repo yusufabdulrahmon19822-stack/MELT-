@@ -7,6 +7,11 @@
 <title>MELTÉ — Made to melt the moment.</title>
 
 <style>
+
+/* =========================
+   BASIC SETUP
+========================= */
+
 *{
   margin:0;
   padding:0;
@@ -20,18 +25,22 @@ html{
 body{
   background:#120805;
   color:white;
-  font-family:Arial, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   overflow-x:hidden;
 }
+
 
 /* =========================
    SCENE 1
 ========================= */
 
 .hero{
+
   height:100svh;
   min-height:650px;
+
   position:relative;
+
   overflow:hidden;
 
   display:flex;
@@ -39,19 +48,25 @@ body{
   justify-content:center;
 
   background:#120805;
+
 }
 
-/* IMAGE */
+
+/* HERO IMAGE */
 
 .hero-img{
+
   position:absolute;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
 
   transform:scale(1.12);
 
-  animation:slowZoom 12s ease-in-out infinite alternate;
+  animation:
+    slowZoom 12s ease-in-out infinite alternate;
 
   filter:
     brightness(.62)
@@ -59,7 +74,9 @@ body{
     saturate(1.08);
 
   z-index:1;
+
 }
+
 
 @keyframes slowZoom{
 
@@ -73,26 +90,34 @@ body{
 
 }
 
-/* CINEMATIC OVERLAY */
+
+/* DARK CINEMATIC OVERLAY */
 
 .overlay{
+
   position:absolute;
+
   inset:0;
+
   z-index:2;
 
   background:
     radial-gradient(
       circle at center,
-      transparent 20%,
+      transparent 15%,
       rgba(0,0,0,.25) 55%,
-      rgba(0,0,0,.8) 100%
+      rgba(0,0,0,.82) 100%
     );
+
 }
 
-/* TOP NAV */
+
+/* NAVIGATION */
 
 .nav{
+
   position:absolute;
+
   top:30px;
   left:0;
 
@@ -101,63 +126,93 @@ body{
   padding:0 7%;
 
   display:flex;
+
   justify-content:space-between;
   align-items:center;
 
   z-index:5;
+
 }
+
 
 .logo{
+
   font-size:20px;
+
   font-weight:bold;
+
   letter-spacing:5px;
+
 }
+
 
 .menu{
-  font-size:12px;
+
+  font-size:11px;
+
   letter-spacing:3px;
+
   text-transform:uppercase;
+
+  opacity:.8;
+
 }
 
-/* HERO TEXT */
+
+/* HERO CONTENT */
 
 .hero-content{
+
   position:relative;
+
   z-index:4;
 
-  text-align:center;
-
   width:90%;
+
+  text-align:center;
 
   transform:translateY(30px);
 
   opacity:0;
 
-  animation:contentReveal 1.5s
-  cubic-bezier(.2,.8,.2,1)
-  .3s forwards;
+  animation:
+    contentReveal 1.5s
+    cubic-bezier(.2,.8,.2,1)
+    .3s forwards;
+
 }
+
 
 @keyframes contentReveal{
 
   to{
+
     opacity:1;
+
     transform:translateY(0);
+
   }
 
 }
 
+
 .small-text{
+
   font-size:11px;
+
   letter-spacing:6px;
+
   text-transform:uppercase;
 
   margin-bottom:20px;
 
   opacity:.8;
+
 }
 
+
 .title{
+
   font-size:
     clamp(4rem,17vw,10rem);
 
@@ -166,9 +221,12 @@ body{
   letter-spacing:-5px;
 
   font-weight:800;
+
 }
 
+
 .tagline{
+
   margin-top:28px;
 
   font-size:
@@ -177,18 +235,22 @@ body{
   letter-spacing:3px;
 
   opacity:.85;
+
 }
 
-/* CTA */
+
+/* BUTTON */
 
 .cta{
+
   display:inline-flex;
 
   margin-top:40px;
 
   padding:15px 27px;
 
-  border:1px solid rgba(255,255,255,.6);
+  border:1px solid
+    rgba(255,255,255,.65);
 
   border-radius:50px;
 
@@ -196,23 +258,30 @@ body{
 
   text-decoration:none;
 
-  font-size:11px;
+  font-size:10px;
 
   letter-spacing:3px;
 
   text-transform:uppercase;
 
   transition:.4s;
+
 }
+
 
 .cta:hover{
+
   background:white;
+
   color:#120805;
+
 }
 
-/* SCROLL */
+
+/* SCROLL INDICATOR */
 
 .scroll{
+
   position:absolute;
 
   bottom:25px;
@@ -227,8 +296,11 @@ body{
 
   opacity:0;
 
-  animation:fadeScroll 1s 2s forwards;
+  animation:
+    fadeScroll 1s 2s forwards;
+
 }
+
 
 @keyframes fadeScroll{
 
@@ -238,19 +310,26 @@ body{
 
 }
 
+
 .scroll-line{
+
   width:1px;
+
   height:55px;
 
   margin:auto;
 
-  background:linear-gradient(
-    white,
-    transparent
-  );
+  background:
+    linear-gradient(
+      white,
+      transparent
+    );
 
-  animation:scrollLine 1.5s infinite;
+  animation:
+    scrollLine 1.5s infinite;
+
 }
+
 
 @keyframes scrollLine{
 
@@ -270,7 +349,9 @@ body{
 
 }
 
+
 .scroll p{
+
   margin-top:8px;
 
   font-size:9px;
@@ -278,7 +359,9 @@ body{
   letter-spacing:4px;
 
   text-transform:uppercase;
+
 }
+
 
 /* =========================
    SCENE 2
@@ -286,9 +369,13 @@ body{
 
 .scene-two{
 
-  height:100svh;
+  position:relative;
 
-  min-height:650px;
+  height:120svh;
+
+  min-height:700px;
+
+  overflow:hidden;
 
   display:flex;
 
@@ -299,59 +386,263 @@ body{
   text-align:center;
 
   background:
+
     radial-gradient(
-      circle at center,
-      #5a2b18,
-      #160805 70%
+      circle at 50% 40%,
+      #d99a68 0%,
+      #8c4324 30%,
+      #3a160b 65%,
+      #120503 100%
     );
 
-  padding:30px;
+}
+
+
+/* MOVING LIGHT */
+
+.scene-two::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:600px;
+
+  height:600px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,225,185,.35),
+      transparent 70%
+    );
+
+  filter:blur(20px);
+
+  animation:
+    lightMove 8s ease-in-out infinite alternate;
 
 }
+
+
+@keyframes lightMove{
+
+  from{
+
+    transform:
+      translate(-120px,-80px)
+      scale(.8);
+
+  }
+
+  to{
+
+    transform:
+      translate(120px,80px)
+      scale(1.2);
+
+  }
+
+}
+
+
+/* SCENE 2 CONTENT */
+
+.scene-two-content{
+
+  position:relative;
+
+  z-index:3;
+
+  width:90%;
+
+  opacity:0;
+
+  transform:
+    translateY(120px)
+    scale(.85);
+
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s
+    cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.scene-two-content.show{
+
+  opacity:1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+}
+
+
+.scene-number{
+
+  font-size:10px;
+
+  letter-spacing:5px;
+
+  text-transform:uppercase;
+
+  opacity:.7;
+
+  margin-bottom:25px;
+
+}
+
 
 .scene-two h2{
 
   font-size:
-    clamp(3rem,12vw,8rem);
+    clamp(4rem,16vw,10rem);
 
-  line-height:.85;
+  line-height:.78;
 
-  letter-spacing:-3px;
+  letter-spacing:-5px;
+
+  font-weight:800;
+
+}
+
+
+.scene-two-description{
+
+  margin-top:35px;
+
+  font-size:
+    clamp(13px,3vw,20px);
+
+  letter-spacing:3px;
+
+  opacity:.8;
 
 }
 
-.scene-two span{
 
-  display:block;
+/* FLOATING PARTICLES */
 
-  margin-top:30px;
+.particle{
 
-  font-size:12px;
+  position:absolute;
 
-  letter-spacing:4px;
+  border-radius:50%;
 
-  opacity:.7;
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #fff0dc,
+      #d78d57 65%,
+      #71351d
+    );
+
+  opacity:.5;
+
+  z-index:2;
+
+  animation:
+    floatParticle 7s ease-in-out infinite
+    alternate;
 
 }
+
+
+.p1{
+
+  width:90px;
+  height:90px;
+
+  left:8%;
+  top:20%;
+
+}
+
+
+.p2{
+
+  width:45px;
+  height:45px;
+
+  right:12%;
+  top:65%;
+
+  animation-delay:1s;
+
+}
+
+
+.p3{
+
+  width:25px;
+  height:25px;
+
+  right:20%;
+  top:30%;
+
+  animation-delay:2s;
+
+}
+
+
+@keyframes floatParticle{
+
+  from{
+
+    transform:
+      translate(0,0)
+      rotate(0deg);
+
+  }
+
+  to{
+
+    transform:
+      translate(35px,-60px)
+      rotate(25deg);
+
+  }
+
+}
+
 
 /* MOBILE */
 
 @media(max-width:600px){
 
   .hero-img{
+
     width:130%;
+
     left:-15%;
+
   }
 
   .nav{
+
     padding:0 6%;
+
   }
 
   .title{
+
     letter-spacing:-3px;
+
+  }
+
+  .scene-two h2{
+
+    letter-spacing:-3px;
+
   }
 
 }
+
 </style>
 </head>
 
@@ -359,17 +650,21 @@ body{
 <body>
 
 
-<!-- =========================
+<!-- =================================
      SCENE 1
-========================= -->
+================================= -->
 
-<section class="hero" id="hero">
+<section class="hero" id="scene1">
+
 
   <img
     class="hero-img"
+
     src="https://images.unsplash.com/photo-1554878050-2ddfd87e7999?auto=format&fit=crop&fm=jpg&q=85&w=1800"
+
     alt="Chocolate ice cream"
   >
+
 
   <div class="overlay"></div>
 
@@ -389,7 +684,7 @@ body{
   </nav>
 
 
-  <!-- HERO -->
+  <!-- HERO CONTENT -->
 
   <div class="hero-content">
 
@@ -405,7 +700,10 @@ body{
       Made to melt the moment.
     </p>
 
-    <a href="#scene2" class="cta">
+    <a
+      href="#scene2"
+      class="cta"
+    >
       Discover
     </a>
 
@@ -424,89 +722,160 @@ body{
 
   </div>
 
+
 </section>
 
 
 
-<!-- =========================
+<!-- =================================
      SCENE 2
-========================= -->
+================================= -->
 
 <section
   class="scene-two"
   id="scene2"
 >
 
-  <div>
+
+  <div class="particle p1"></div>
+
+  <div class="particle p2"></div>
+
+  <div class="particle p3"></div>
+
+
+  <div class="scene-two-content">
+
+
+    <div class="scene-number">
+      Scene 02 — The experience
+    </div>
+
 
     <h2>
-      YOUR<br>
-      CRAVING<br>
-      STARTS HERE.
+
+      THE<br>
+
+      FIRST<br>
+
+      BITE.
+
     </h2>
 
-    <span>
-      SCENE 02
-    </span>
+
+    <p class="scene-two-description">
+
+      Creamy. Rich. Impossible to forget.
+
+    </p>
+
 
   </div>
+
 
 </section>
 
 
+
 <script>
 
-/* =========================
-   SCROLL MOTION
-========================= */
+/* =================================
+   SCENE 1 SCROLL MOTION
+================================= */
 
 const hero =
-document.querySelector(".hero");
+document.querySelector("#scene1");
 
-const image =
+const heroImage =
 document.querySelector(".hero-img");
 
-const content =
+const heroContent =
 document.querySelector(".hero-content");
 
 
 window.addEventListener(
   "scroll",
+
   () => {
 
     const scroll =
       window.scrollY;
 
-    const height =
+    const screen =
       window.innerHeight;
 
 
     /* IMAGE MOVEMENT */
 
-    image.style.transform =
+    heroImage.style.transform =
       `scale(${1.12 + scroll / 5000})
        translateY(${scroll * .12}px)`;
 
 
     /* TEXT MOVEMENT */
 
-    content.style.transform =
+    heroContent.style.transform =
       `translateY(${-scroll * .25}px)`;
 
 
     /* HERO FADE */
 
-    if(scroll < height){
+    if(scroll < screen){
 
       hero.style.opacity =
-        1 - scroll / height * .75;
+        1 -
+        (scroll / screen) * .75;
 
     }
 
   }
+
 );
 
+
+/* =================================
+   SCENE 2 REVEAL
+================================= */
+
+const sceneTwo =
+document.querySelector(".scene-two");
+
+const sceneTwoContent =
+document.querySelector(".scene-two-content");
+
+
+const observer =
+new IntersectionObserver(
+
+  (entries) => {
+
+    entries.forEach(
+
+      (entry) => {
+
+        if(entry.isIntersecting){
+
+          sceneTwoContent.classList.add("show");
+
+        }
+
+      }
+
+    );
+
+  },
+
+  {
+    threshold:.35
+  }
+
+);
+
+
+observer.observe(sceneTwo);
+
 </script>
+
 
 </body>
   </html>
